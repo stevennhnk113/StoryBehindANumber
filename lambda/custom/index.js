@@ -72,7 +72,7 @@ var LaunchRequestHandler = {
 var GetNumberStoryIntentHandler = {
     canHandle: function (handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'GetPokemonIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'GetNumberStoryIntent';
     },
     handle: function (handlerInput) {
         return __awaiter(this, void 0, void 0, function () {
@@ -83,7 +83,9 @@ var GetNumberStoryIntentHandler = {
                         speechText = '';
                         requestEnvelope = handlerInput.requestEnvelope;
                         intentRequest = requestEnvelope.request;
-                        if (intentRequest.intent.slots[Constant_1.NumberSlot].value == null) {
+                        if (intentRequest.intent.slots == null ||
+                            intentRequest.intent.slots[Constant_1.NumberSlot] == null ||
+                            intentRequest.intent.slots[Constant_1.NumberSlot].value == null) {
                             return [2 /*return*/, handlerInput.responseBuilder
                                     .addDelegateDirective()
                                     .getResponse()];

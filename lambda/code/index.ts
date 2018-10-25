@@ -35,7 +35,7 @@ const LaunchRequestHandler = {
 const GetNumberStoryIntentHandler = {
 	canHandle(handlerInput: Alexa.HandlerInput) {
 		return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-			&& handlerInput.requestEnvelope.request.intent.name === 'GetPokemonIntent';
+			&& handlerInput.requestEnvelope.request.intent.name === 'GetNumberStoryIntent';
 	},
 	async handle(handlerInput: Alexa.HandlerInput) {
 		let speechText = '';
@@ -43,7 +43,9 @@ const GetNumberStoryIntentHandler = {
 		const { requestEnvelope } = handlerInput;
 		const intentRequest = requestEnvelope.request as IntentRequest;
 
-		if (intentRequest.intent.slots[NumberSlot].value == null) {
+		if (intentRequest.intent.slots == null || 
+			intentRequest.intent.slots[NumberSlot] == null || 
+			intentRequest.intent.slots[NumberSlot].value == null) {
 			return handlerInput.responseBuilder
 				.addDelegateDirective()
 				.getResponse();

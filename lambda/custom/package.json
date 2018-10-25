@@ -1,0 +1,20 @@
+{
+  "name": "pokemonzoo",
+  "version": "1.0.0",
+  "description": "Alexa-Skill",
+  "main": "../custom/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nguyen Nguyen",
+  "license": "",
+  "dependencies": {
+    "ask-sdk": "^2.0.3",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.3",
+    "typescript": "^2.8.3"
+  }
+}

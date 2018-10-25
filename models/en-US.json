@@ -1,0 +1,104 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "number wizard",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "GetNumberStoryIntent",
+          "slots": [
+            {
+              "name": "NUM",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "tell me about {NUM}",
+                "what is the story of {NUM}",
+                "let hear about {NUM}",
+                "how about {NUM}",
+                "{NUM}"
+              ]
+            }
+          ],
+          "samples": [
+            "what is the fact about {NUM}",
+            "story of {NUM}",
+            "{NUM}",
+            "tell me about {NUM}",
+            "what is the story behind {NUM}",
+            "What is the story of {NUM}"
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GetNumberStoryIntent",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "NUM",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1022597402552.1271045698630"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.1022597402552",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What number do you want to hear about"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1022597402552.1271045698630",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which number do you want to know about"
+          },
+          {
+            "type": "PlainText",
+            "value": "which number?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what number?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what number do you want to know more about?"
+          }
+        ]
+      }
+    ]
+  }
+}
